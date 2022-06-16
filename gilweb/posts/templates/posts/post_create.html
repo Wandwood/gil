@@ -1,0 +1,14 @@
+{% extends "posts/base.html" %}
+{% load static %}
+{% block navbar %}{% endblock %}
+
+{% block content %}
+<form method="POST"> {% csrf_token %}
+    <div class="containter p-1 my-1">
+    <div class="mb-3 mt-3">
+    {{form.as_p}}
+    <input type="submit" value="save">
+    </div>
+    </div>
+</form>
+{% endblock %}

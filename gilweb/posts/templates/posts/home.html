@@ -1,7 +1,9 @@
-<!DOCTYPE html>
+{% extends "posts/base.html" %}
+{% load static %}
+
 {% block content %}
-<h1> Wow nice</h1>
-<ul>
-{{ object.game_name}}
-</ul>
+<h1>{{object.post_header}}</h1>
+<h2>{{ object.post_text }}</h2>
+{{object.post_rating}}
 {% endblock %}
+

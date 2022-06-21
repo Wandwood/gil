@@ -1,0 +1,26 @@
+{% extends "posts/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid" style="width: 800px">
+<div class="card">
+    <div class="card-header">
+       <h2> {{object.post_header}}</h2>
+        <p> {{object.game_name}}</p>
+        {% if object.game_img %}
+        <p>{{object.game_img.url}}</p>
+        {% endif %}
+  </div>
+    <div class="card-body">
+        <h1 class="card-text">{{ object.post_text }}</h1>
+        <p class="card-title">{{object.post_rating}}</p>
+        
+{%if object.user == user %}
+<form method="post"> {% csrf_token %}
+    <button type="submit" value="{{ object.delete }}" class="btn btn-danger">Delete this post</button>
+</form>
+</div>
+</div>
+{% endif %}
+{% endblock %}
+

@@ -1,3 +1,5 @@
+from asyncio.windows_events import NULL
+from email.policy import default
 from django.db import models
 from django.conf import settings
 
@@ -9,7 +11,7 @@ class User_posts(models.Model):
     game_name = models.CharField(max_length=150)
     post_text = models.CharField(max_length=5000)
     game_rating = models.DecimalField(max_digits=4, decimal_places=2)
-    post_date = models.DateField(auto_now=False, auto_now_add=True)
+    post_date = models.DateTimeField(auto_now=False, auto_now_add=True)
     post_rating = models.DecimalField(max_digits=4, decimal_places=2, default=00.00)
 
     def __str__(self):

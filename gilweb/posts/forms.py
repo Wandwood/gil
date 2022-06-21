@@ -11,7 +11,7 @@ class User_postsForm(forms.ModelForm):
             'post_header',
             'game_name',
             'post_text',
-            'game_rating'
+            'game_rating',
         ]
         widgets = {
             'post_text': Textarea(attrs={'cols': 80, 'rows': 20}),

@@ -1,8 +1,11 @@
 from django.urls import path
 
 from . import views
-from posts.views import home_view
+from posts.views import detail_view, user_posts_create, user_posts_detail_view, user_search_view
 urlpatterns = [
     path('', views.index, name='index'),
-    path('home/<int:my_id>/', home_view, name='home_view')
+    path('create/', user_posts_create, name='create'),
+    path('detail/<int:my_id>/', detail_view, name='detail_view'),
+    path('user_posts/', user_posts_detail_view, name='user_posts'),
+    path('user_search', user_search_view, name='user_search')
 ]

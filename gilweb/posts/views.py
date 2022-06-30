@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from pdb import post_mortem
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, Http404
 from .models import User, User_posts
 from .forms import User_postsForm
 from django.db.models import Q

@@ -2,6 +2,7 @@ from asyncio.windows_events import NULL
 from email.policy import default
 from django.db import models
 from django.conf import settings
+from django.core.validators import MaxValueValidator
 
 User = settings.AUTH_USER_MODEL
 # Create your models here.
@@ -10,7 +11,7 @@ class User_posts(models.Model):
     post_header = models.CharField(max_length=200)
     game_name = models.CharField(max_length=150)
     post_text = models.CharField(max_length=5000)
-    game_rating = models.DecimalField(max_digits=4, decimal_places=2)
+    game_rating = models.DecimalField(max_digits=4, decimal_places=2, validators=[MaxValueValidator(10.00)])
     post_date = models.DateTimeField(auto_now=False, auto_now_add=True)
     post_rating = models.DecimalField(max_digits=4, decimal_places=2, default=00.00)
 

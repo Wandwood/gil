@@ -2,7 +2,7 @@ from turtle import textinput
 from django import forms
 from .models import User_posts
 from django.forms import NumberInput, Textarea
-from django.utils.translation import gettext_lazy as _
+
 
 class User_postsForm(forms.ModelForm):
     class Meta:

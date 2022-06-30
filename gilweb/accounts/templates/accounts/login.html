@@ -1,6 +1,7 @@
 {% extends "posts/base.html" %}
 {% load static %}
 
+{% load socialaccount %}
 {% block content %}
 <form method="POST"> {% csrf_token %}
     <div class="containter p-1 my-1">
@@ -10,7 +11,7 @@
     </div>
     </div>
 </form>
-<a class="btn btn-primary bg-white text-dark" href="http://127.0.0.1:8000/register/" role="button">Register</a>
+<a class="btn btn-primary bg-white text-dark" href="/register/" role="button">Register</a>
 {% endblock %}
 
 
